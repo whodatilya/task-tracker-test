@@ -125,6 +125,8 @@
       flex-direction: row
       justify-content: space-between
     &_cols
+      @media (max-width: 550px)
+        font-size: 14px
       display: grid
       align-items: center
       padding: 10px
@@ -132,6 +134,8 @@
       grid-template-columns: 0.5fr 3fr 6fr 2fr 1fr
       gap: 0 0
       &_header
+        @media (max-width: 550px)
+          font-size: 14px
         font-size: 24px
         color: #FFFFFF
         font-weight: 500
@@ -158,7 +162,7 @@
     &:hover
       filter: invert(90%) sepia(42%) saturate(6776%) hue-rotate(57deg) brightness(115%) contrast(102%)
 input
-  height: 40px
+  height: 66%
   border-radius: 8px
   outline: none
   width: fit-content
