@@ -33,7 +33,7 @@
                                 <option :selected="todo.status === option" v-for="option in optionsList">{{ option }}</option>
                             </select>
                         </div>
-                        <div class="todos__table_status" v-else>{{ todo.status }}</div>
+                        <div class="todos__table_status" v-else :style="{'color': statusClass(todo.status)}">{{ todo.status }}</div>
                         <div class="todos__table_actions">
                             <div v-if="todo.isEdit" class="actions__confirm" @click="processConfirm(index, todo)">
                                 <img :src="iconConfirm" alt="">
@@ -111,6 +111,18 @@ export default {
         updateTodo (id, todo) {
             todo.isEdit = true
             this.editedTodo = this.todos[id]
+        },
+        statusClass (status) {
+            switch (status) {
+                case 'Canceled':
+                    return 'red'
+                case 'In Progress':
+                    return 'blue'
+                case 'Completed':
+                    return 'green'
+                case 'Planned':
+                    return 'orange'
+            }
         }
     }
 }
