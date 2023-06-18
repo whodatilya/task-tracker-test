@@ -40,7 +40,7 @@
                             </div>
                             <div v-else class="todos__table_actions">
                                 <div class="actions__delete" @click="deleteTodo(index)">
-                                    <img :src="iconDelete" alt="">
+                                    <img  :src="iconDelete" alt="">
                                 </div>
                                 <div class="actions__edit" @click="updateTodo(index, todo)">
                                     <img :src="iconEdit" alt="">
